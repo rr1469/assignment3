@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BMI Calculator / Retirement Savings Goal </title>
+        <style>
+            
+        body,html {
+        color: black;
+        display:block;
+        width:100%;
+        margin:0;
+        padding:0;
+            }
+        form {
+                
+        background-color: white;
+        display: inline-block;
+        box-sizing: center-box;
+        box-shadow: 2px 2px 20px 5px black;
+        margin:0;
+        padding: 10px;
+        width:100%;
+        max-width: 400px;
+        text-align: center;
+            
+        }
+        input {
+        box-shadow: 1px 1px 3px 1px black;
+        width: 100%;
+        text-align: center;
+        }
+
+        .submit {
+        display:inline-block;
+        color: white;
+        background-color: blue;
+        margin:0;
+        padding: 5px;
+        border: 0;
+        font-weight: bold;
+        width:100%;
+        }
+        .submit:hover {
+        color: blue;
+        background-color: white;
+        font-size: 0.7em;
+        font-weight: bold;
+        }
+
+        #bmi {
+        border: 1px solid black;
+        padding: 2px;
+        color: white;
+        width: 100%;
+        text-align: center;
+        }
+
+        h1 {
+        color: black;
+        text-shadow: -2px -2px 5px white;
+        }
+
+        </style>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        <script type = "text/javascript">
+        function retirement()
+            {
+                
+                var age = Number(document.getElementById("age").value);
+                var salary = Number(document.getElementById("salary").value);
+                var percentage = Number(document.getElementById("percentage").value);
+                var desired_savings = Number(document.getElementById("desired_savings").value);
+                
+                
+                if (age > 0 && salary > 0 && percentage > 0 && desired_savings > 0)
+                {
+                var total_savings = ((percentage / 100)* salary);
+                var employer_assist = (total_savings) * 0.35;
+                
+                var total_annaul_savings = total_savings + employer_assist;
+                var savings_duration = desired_savings / total_annaul_savings;
+                var age_obtained = savings_duration + age;
+                var age_obtained = age_obtained.toFixed(1);
+                document.getElementById("age_obtained").innerHTML = "You will meet your goal at : " + age_obtained;
+            
+                if (age_obtained < 100) {               document.getElementById("comment").innerHTML = "Your savings goal is met.";
+			    }
+			    else {
+				document.getElementById("comment").innerHTML = "Your savings goal is not met.";
+			    }
+                }
+                else
+                {
+                    alert("Invalid Inputs. Must enter the form correctly.");        
+                }
+            }
+        </script>
+    </head>
+    <body>            
+        <center>
+            <form>
+            <h1>Retirement Savings Goal</h1>
+            <label> Input User's current age:</label>
+            <input id="age" type="text" />
+            <br />
+            <br />
+            <label>Input User's annual salary:</label>
+            <input id="salary" type="text"  />
+            <br />
+            <br />    
+            <label>Enter the percentage you will save from your salary(%): </label>
+            <input id="percentage" type="text"  />
+            <br />
+            <br />
+            <label>Enter your desired amount of savings / goal: </label>
+            <input id="desired_savings" type="text"  />
+            <br />
+            <br />   
+            
+            <input class = "submit" type="button"  value="Submit" onclick="retirement()" />
+            <p id="age_obtained">Here will be your result</p>
+            <p id = "comment"> </p>  
+                
+            </form>
+        </center>
+        
+    </body>
+    <h3><a href="index.html">Go back to main page</a></h3>
+</html>

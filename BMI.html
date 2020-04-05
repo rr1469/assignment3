@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BMI Calculator / Retirement Savings Goal </title>
+        <style>
+            
+        body,html {
+        color: black;
+        display:block;
+        width:100%;
+        margin:0;
+        padding:0;
+            }
+        form {
+                
+        background-color: white;
+        display: inline-block;
+        box-sizing: center-box;
+        box-shadow: 2px 2px 20px 5px black;
+        margin:0;
+        padding: 10px;
+        width:100%;
+        max-width: 400px;
+        text-align: center;
+            
+        }
+        input {
+        box-shadow: 1px 1px 3px 1px black;
+        width: 100%;
+        text-align: center;
+        }
+
+        .submit {
+        display:inline-block;
+        color: white;
+        background-color: blue;
+        margin:0;
+        padding: 5px;
+        border: 0;
+        font-weight: bold;
+        width:100%;
+        }
+        .submit:hover {
+        color: blue;
+        background-color: white;
+        font-size: 0.7em;
+        font-weight: bold;
+        }
+
+        #bmi {
+        border: 1px solid black;
+        padding: 2px;
+        color: white;
+        width: 100%;
+        text-align: center;
+        }
+
+        h1 {
+        color: black;
+        text-shadow: -2px -2px 5px white;
+        }
+
+        </style>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        <script type = "text/javascript">
+        function computeBMI()
+            {
+                var height_feet = Number(document.getElementById("height_feet").value);
+                var height_inches = Number(document.getElementById("height_inches").value);
+                var weight = Number(document.getElementById("weight").value);
+                
+                if (height_feet > 0 && height_inches > 0 && weight > 0)
+                {
+                var weight = weight * 703;
+                var height = height_feet * 12 + height_inches;
+                var BMI = weight / (height * height);
+                var BMI = BMI.toFixed(1);
+                document.getElementById("BMI").innerHTML = "Your BMI score is : " + BMI;
+            
+            
+			    if (BMI < 18.5) {
+				document.getElementById("comment").innerHTML = "You are Underweight.";
+			    }
+			    if (BMI >= 18.5 && BMI < 25) {
+				document.getElementById("comment").innerHTML = "You are Normal weight.";
+			    } 
+			    if (BMI >= 25 && BMI < 30) {
+				document.getElementById("comment").innerHTML = "You are Overweight.";
+     			}
+	    		if (BMI >= 30) {
+				document.getElementById("comment").innerHTML = "You are Obese.";
+		    	}
+                }
+                else
+                {
+                    alert("Invalid Inputs. Must enter the form correctly.");        
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+            <form>
+            <h1>Calculate Your BMI Index</h1>
+            <label> Enter your weight (in pounds):</label>
+            <input id="weight" type="text" />
+            <br />
+            <br />
+            <label>Enter your height: Feet</label>
+            <input id="height_feet" type="text"  />
+            <br />
+            <br />    
+            <label>Inches:</label>
+            <input id="height_inches" type="text"  />
+            <br />
+            <br />
+            
+            <input class = "submit" type="button"  value="Submit" onclick="computeBMI()" />
+            <p id="BMI">Here will be your result</p>
+            <p id = "comment"> </p>  
+                
+            </form>
+        </center>        
+    </body>
+    <h3><a href="index.html">Go back to main page</a></h3>
+</html>
