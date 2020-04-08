@@ -4,8 +4,7 @@ language: node_js
 node_js:
   - "stable"
 install:
-  - npm install mocha --save-dev
-  - npm computeBMI.test
+  - npm install mocha chai --save-dev
 cache:
   directories:
   - node_modules
