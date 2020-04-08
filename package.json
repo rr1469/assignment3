@@ -1,8 +1,8 @@
 {
   "name": "mochatest",
   "version": "1.0.0",
-  "description": "simple app",
-  "main": "app.js",
+  "description": "Body Mass Index Calculator",
+  "main": "computeBMI.js",
   "scripts": {
     "test": "mocha || true" 
   },
