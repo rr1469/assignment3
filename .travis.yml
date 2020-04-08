@@ -10,4 +10,4 @@ after_success:
   - npm run coveralls
 jobs:
   include:
-    - script: npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls
+    - script: mocha cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls
