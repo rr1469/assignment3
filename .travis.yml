@@ -1,9 +1,17 @@
 sudo: false
 
 language: node_js
-
 node_js:
-  - "0.10"
-
-before_script:
-  - make build
+  - node
+install:
+  - npm install
+  - npm install typescript-require --save-dev
+cache:
+  directories:
+  - node_modules
+script: echo "mocha"
+jobs:
+  include:
+    - stage: Produce Coverage
+      node_js: node
+      script: ./node_modules/.bin/mocha --compilers ts:typescript-require
