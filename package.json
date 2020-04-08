@@ -4,7 +4,7 @@
   "description": "Body Mass Index Calculator",
   "main": "computeBMI.js",
   "scripts": {
-  "test": "mocha computeBMI.test.js"
+  "test": "mocha"
 },
   "author": "",
   "license": "ISC",
