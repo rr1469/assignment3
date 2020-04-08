@@ -4,7 +4,8 @@ language: node_js
 node_js:
   - node
 install:
-  - npm install
+  - npm install mocha --save-dev
+    npm test
 cache:
   directories:
   - node_modules
