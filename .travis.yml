@@ -2,7 +2,7 @@ sudo: false
 
 language: node_js
 node_js:
-  - node
+  - "stable"
 install:
   - npm install mocha --save-dev
     npm test
@@ -14,5 +14,5 @@ jobs:
   include:
     - stage: Produce Coverage
       node_js: node
-      script: node ./src/typescript/bin/tsc.js -m commonjs -t ES5 test/*.ts && ./node_modules/mocha/bin/mocha
+      script: ./node_modules/mocha/bin/mocha
       
