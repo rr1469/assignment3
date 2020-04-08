@@ -13,5 +13,5 @@ jobs:
   include:
     - stage: Produce Coverage
       node_js: node
-      script: ./node_modules/.bin/mocha
+      script: node ./src/typescript/bin/tsc.js -m commonjs -t ES5 test/*.ts && ./node_modules/mocha/bin/mocha
       
