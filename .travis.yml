@@ -5,11 +5,4 @@ node_js:
   - "stable"
 install:
   - npm install mocha chai --save-dev
-cache:
-  directories:
-  - node_modules
-jobs:
-  include:
-    - stage: Produce Coverage
-      node_js: node
       
