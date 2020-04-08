@@ -5,7 +5,7 @@
   "main": "computeBMI.js",
   "scripts": {
   "build": "make build",
-  "test": "node ./src/typescript/bin/tsc.js -m commonjs -t ES5 test/*.ts && ./node_modules/mocha/bin/mocha"
+  "test": "mocha"
 },
   "author": "",
   "license": "ISC",
