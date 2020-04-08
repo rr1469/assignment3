@@ -6,4 +6,5 @@ node_js:
 install:
   - npm install mocha chai --save-dev
   - npm install --save-dev coveralls mocha-lcov-reporter
-      
+after_success:
+  - npm run coveralls
