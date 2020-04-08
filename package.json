@@ -4,8 +4,9 @@
   "description": "Body Mass Index Calculator",
   "main": "computeBMI.js",
   "scripts": {
-    "test": "mocha || true" 
-  },
+  "build": "make build",
+  "test": "node ./src/typescript/bin/tsc.js -m commonjs -t ES5 test/*.ts && ./node_modules/mocha/bin/mocha"
+},
   "author": "",
   "license": "ISC",
   "devDependencies": {
