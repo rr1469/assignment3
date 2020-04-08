@@ -5,4 +5,5 @@ node_js:
   - "stable"
 install:
   - npm install mocha chai --save-dev
+  - npm install --save-dev coveralls mocha-lcov-reporter
       
